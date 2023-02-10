@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-app.use(cors())
+app.use(cors({
+  origin: '*'
+}));
+
 
 
 router.get("/", async (req, res, next) => {
