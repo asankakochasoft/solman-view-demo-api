@@ -2,10 +2,16 @@
 const express = require("express");
 const home = require("./routes/home");
 const { createProxyMiddleware } = require('http-proxy-middleware');
+var cors = require('cors')
 
 // Middlewares
 const app = express();
+
+
+app.use(cors());
 app.use(express.json());
+
+
 
 // Routes
 app.use("/home", home);
