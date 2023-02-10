@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-app.use(cors({
-  origin: '*'
-}));
-
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 
 router.get("/", async (req, res, next) => {
