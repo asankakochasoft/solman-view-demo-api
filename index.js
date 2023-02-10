@@ -9,7 +9,6 @@ const app = express();
 
 
 app.use(cors());
-app.use(express.json());
 
 
 
@@ -17,6 +16,8 @@ app.use(express.json());
 app.use("/home", home);
 
 app.use('/solman-view', createProxyMiddleware({ target: 'https://solman.kochasoft.com/tac_alias_bsp/index.html?configId=1&DF_ALIAS=tac_alias_odata&FI_C_ALIAS=alias_dfl&RefreshTimer=30', changeOrigin: true }));
+
+app.use('/test-demo', createProxyMiddleware({ target: 'https://www.w3schools.com/', changeOrigin: true }));
 
 
 // connection
